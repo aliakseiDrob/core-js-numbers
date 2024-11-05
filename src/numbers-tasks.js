@@ -175,8 +175,8 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  return Math.round(num / 10 ** pow) * 10 ** pow;
 }
 
 /**
@@ -196,8 +196,11 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(num) {
+  for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
+    if (num % i === 0) return false;
+  }
+  return num > 1;
 }
 
 /**
@@ -247,8 +250,18 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(n) {
+  let a = 0;
+  let b = 1;
+  let c;
+  let i;
+  if (n === 0) return a;
+  for (i = 2; i <= n; i += 1) {
+    c = a + b;
+    a = b;
+    b = c;
+  }
+  return b;
 }
 
 /**
@@ -262,8 +275,8 @@ function getFibonacciNumber(/* index */) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  return (n * (n + 1)) / 2;
 }
 
 /**
@@ -277,8 +290,14 @@ function getSumToN(/* n */) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(n) {
+  let sum = 0;
+  let number = n;
+  while (number) {
+    sum += number % 10;
+    number = Math.floor(number / 10);
+  }
+  return sum;
 }
 
 /**
@@ -292,8 +311,8 @@ function getSumOfDigits(/* num */) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  return Math.log2(num) % 1 === 0;
 }
 
 /**
@@ -306,8 +325,8 @@ function isPowerOfTwo(/* num */) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-function getSine(/* num */) {
-  throw new Error('Not implemented');
+function getSine(n) {
+  return Math.sin(n);
 }
 
 /**
