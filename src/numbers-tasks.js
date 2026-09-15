@@ -474,8 +474,8 @@ function isSafeInteger(/* number */) {
  * 5.9  => 5
  * -5.1 => -6
  */
-function roundToSmallestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToSmallestInteger(number) {
+  return Math.floor(number);
 }
 
 /**
@@ -488,8 +488,8 @@ function roundToSmallestInteger(/* number */) {
  * 5.1  => 6
  * -5.9 => -5
  */
-function roundToLargestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToLargestInteger(numbe) {
+  return Math.ceil(numbe);
 }
 
 /**
@@ -503,8 +503,8 @@ function roundToLargestInteger(/* number */) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function roundToNearestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToNearestInteger(number) {
+  return Math.round(number);
 }
 
 /**
